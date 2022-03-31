@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Colo
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.details_fragment_container, detailFragment)
+                .addToBackStack(null)//обратный стэк (по нажатию на кнопку назад)
                 .commit();
 
     }

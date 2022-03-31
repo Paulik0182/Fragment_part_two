@@ -22,10 +22,10 @@ public class DetailFragment extends Fragment {
     //для того чтобы фрагмент пережил поворот экрана (здесь создается фрагмент и запоминаются данные)
     public static DetailFragment newInstance(int color){
         DetailFragment fragment = new DetailFragment(); //создание фрагмента
-        Bundle args = new Bundle();// это карзина (в данном случае это тоже самое, что и при с
+        Bundle args = new Bundle();// это корзина (в данном случае это тоже самое, что и при с
         // охранении ключь значение. сюда мы кладем данные, используется при повороте экрана).
-        args.putInt(COLOR_ARG_KEY, color);// в карзину положили цвет
-        fragment.setArguments(args);//устанавливаем аргументы (карзину положили во фрагмент)
+        args.putInt(COLOR_ARG_KEY, color);// в корзину положили цвет
+        fragment.setArguments(args);//устанавливаем аргументы (корзину положили во фрагмент)
         return fragment;// отдали фрагмент
     }
 
