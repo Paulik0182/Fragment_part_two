@@ -3,8 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#78BD29"
+    android:padding="8dp"
     android:orientation="vertical"
     tools:context=".ListFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/blue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Синий"
+        android:backgroundTint="#1A3CEF"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/green_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Зеленый"
+        android:backgroundTint="#3AD541"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/red_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Красный"
+        android:backgroundTint="#CF3030"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/black_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Черный"
+        android:backgroundTint="@color/black"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/yellow_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Желтый"
+        android:backgroundTint="#DFCC27"/>
 
 </LinearLayout>
