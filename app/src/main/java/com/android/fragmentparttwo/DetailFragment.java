@@ -12,10 +12,21 @@ import android.view.ViewGroup;
 
 public class DetailFragment extends Fragment {
 
-    private int color;
+    private static final String COLOR_ARG_KEY = "COLOR_ARG_KEY";
 
+    //обязательно должен быть пустой конструктор фрагмента для пересоздания фрагмента,
+    // например при повороте (система обязательно требует пустой конструктор
     public DetailFragment() {
-        // Required empty public constructor
+    }
+
+    //для того чтобы фрагмент пережил поворот экрана (здесь создается фрагмент и запоминаются данные)
+    public static DetailFragment newInstance(int color){
+        DetailFragment fragment = new DetailFragment(); //создание фрагмента
+        Bundle args = new Bundle();// это карзина (в данном случае это тоже самое, что и при с
+        // охранении ключь значение. сюда мы кладем данные, используется при повороте экрана).
+        args.putInt(COLOR_ARG_KEY, color);// в карзину положили цвет
+        fragment.setArguments(args);//устанавливаем аргументы (карзину положили во фрагмент)
+        return fragment;// отдали фрагмент
     }
 
     @Override
@@ -27,5 +38,11 @@ public class DetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //получаем фрагмент с данными (ниже приведенный метод)
+        if (getArguments() != null){
+            int color = getArguments().getInt(COLOR_ARG_KEY); //получаем цвет
+            view.setBackgroundColor(color);//кладем цвет
+        }
+
     }
 }

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Colo
 
     @Override
     public void openColorScreen(int color) {
-        DetailFragment detailFragment = new DetailFragment();
+        DetailFragment detailFragment = DetailFragment.newInstance(color);//newInstance из class DetailFragment
 
         getSupportFragmentManager()
                 .beginTransaction()
