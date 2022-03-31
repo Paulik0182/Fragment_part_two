@@ -6,4 +6,28 @@
     android:background="#76DEEC"
     tools:context=".DetailFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+    <TextView
+        android:id="@+id/result_number_second_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/result_text_second_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center"
+        android:textSize="15sp" />
+    </LinearLayout>
+
 </FrameLayout>

@@ -47,4 +47,23 @@
         android:text="Желтый"
         android:backgroundTint="#DFCC27"/>
 
+    <TextView
+        android:id="@+id/result_second_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:text="Введите число"/>
+
+    <EditText
+        android:id="@+id/input_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textSize="15sp"
+        android:hint="от 0 до 9"
+        android:inputType="number" />
+
 </LinearLayout>
