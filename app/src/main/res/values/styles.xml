@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="layout_style">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="text_edit_view_style">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/padding_text_edit_view</item>
+        <item name="android:textSize">@dimen/size_text_edit_view</item>
+    </style>
+</resources>

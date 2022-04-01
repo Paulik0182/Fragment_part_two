@@ -3,7 +3,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#76DEEC"
+    android:background="@color/light_blue"
     tools:context=".DetailFragment">
+
+    <LinearLayout
+        style="@style/layout_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/result_number_second_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/text_edit_view_style"  />
+
+        <TextView
+            android:id="@+id/result_text_second_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/text_edit_view_style"  />
+    </LinearLayout>
 
 </FrameLayout>
