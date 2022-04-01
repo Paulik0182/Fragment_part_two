@@ -7,4 +7,7 @@
     <string name="yellow">Желтый</string>
     <string name="message_screen">Введите число</string>
     <string name="input_number">от 0 до 9</string>
+    <string name="info_text_wrong_number">Введите значение от 0 до 9 !!</string>
+    <string name="info_text_victory">Ура Вы ПОБЕДИЛИ!!!</string>
+    <string name="info_text_forward">Попробуйте еще</string>
 </resources>

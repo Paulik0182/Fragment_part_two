@@ -13,14 +13,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class ListFragment extends Fragment {
+
 
     private Button blueButton;
     private Button greenButton;
     private Button redButton;
     private Button blackButton;
     private Button yellowButton;
+
+    private EditText inputEt;
+    private TextView messageScreenTv;
+
+    private int currency = 0;
 
 
     //метод присоединяющий фрагмент к активити
@@ -33,10 +42,10 @@ public class ListFragment extends Fragment {
         try {
             getController();
             // ловим все исключения
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new IllegalStateException(
                     "ListFragment можно показывать только " +
-                "в активити имплементирующих интерфейс ColorListController"
+                            "в активити имплементирующих интерфейс ColorListController"
             );
         }
     }
@@ -54,13 +63,24 @@ public class ListFragment extends Fragment {
         setListeners();
     }
 
-
     private void initViews(View view) {
         blueButton = view.findViewById(R.id.blue_button);
         greenButton = view.findViewById(R.id.green_button);
         redButton = view.findViewById(R.id.red_button);
         blackButton = view.findViewById(R.id.black_button);
         yellowButton = view.findViewById(R.id.yellow_button);
+
+        inputEt = view.findViewById(R.id.input_edit_text);
+        messageScreenTv = view.findViewById(R.id.message_screen_text_view);
+    }
+
+    //Метод проверки на формат введенного значения в поле EditText
+    private int parseIntString(String inputSrt) {
+        try {
+            return Integer.parseInt(inputSrt);//Приобразовываем ткст в число
+        } catch (NumberFormatException nfe) {
+            return 0;
+        }
     }
 
     private void setListeners() {
@@ -88,6 +108,7 @@ public class ListFragment extends Fragment {
                     color = 0;
             }
             openColorScreen(color);
+            transactionValue();
         };
 
         blueButton.setOnClickListener(OnColorClickListener);
@@ -95,6 +116,21 @@ public class ListFragment extends Fragment {
         redButton.setOnClickListener(OnColorClickListener);
         blackButton.setOnClickListener(OnColorClickListener);
         yellowButton.setOnClickListener(OnColorClickListener);
+    }
+
+    public void transactionValue() {
+
+        Bundle args = new Bundle();
+        final String inputSrt = inputEt.getText().toString();
+        final int inputValue = parseIntString(inputSrt);
+
+        if (inputValue <= 9 && inputValue >= 0) {
+            args.putInt(MainActivity.VALUE_KEY, inputValue);// в корзину положили значение
+            setArguments(args);
+        } else {
+            messageScreenTv.setText(R.string.info_text_wrong_number);
+//            Toast.makeText(this, R.string.info_text_wrong_number, Toast.LENGTH_SHORT).show();//почему не получился здесь Toast?
+        }
     }
 
     //открываем экран
@@ -107,7 +143,7 @@ public class ListFragment extends Fragment {
         getController().openColorScreen(color);//вариант 3. отимальный, даже если забудем отнаследоватся (вариант2) то все будет работать
     }
 
-    private ColorListController getController(){
+    private ColorListController getController() {
         return (ColorListController) getActivity();
     }
 
